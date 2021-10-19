@@ -8,6 +8,7 @@ const status = {
     ok: 200,
     notFound : 404,
 }
+const date = new Date();
 
 
 module.exports = {
@@ -28,7 +29,24 @@ module.exports = {
             const msg = {error: "User id not found"};
             res.status(status.notFound).send(msg)
         }
+    },
 
-        
+    getDateMill: (req, res) => {
+        res.status(status.ok).send(date.getTime().toString())
+    },
+
+    getDateYMD: (req, res) => {
+        res.status(status.ok).send(date.toISOString().slice(0, 10))
+    },
+
+    getDateHMS: (req, res) => {
+        res.status(status.ok).send(date.toTimeString().split(' ')[0])
+    },
+
+    getTable: (req, res) => {
+        const num = req.params.num;
+        for(let i = 0; i < 10; i++){
+            //TODO tabla multiplicar
+        }
     }
 }
