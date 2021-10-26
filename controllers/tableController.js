@@ -3,7 +3,6 @@ const status = require("../status/status");
 module.exports = {
     getTable: (req, res) => {
         try {
-            
             const num = req.params.num;
             if(isNaN(num)){
                 res.status(status.NOT_FOUND).send("Number not selected");
