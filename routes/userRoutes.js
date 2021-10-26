@@ -11,6 +11,6 @@ router.get(`/profile/:userId?`, userController.profile)
 router.get(`/getDateMill`, dateController.getDateMill);
 router.get(`/getDateYMD`, dateController.getDateYMD);
 router.get(`/getDateHMS`, dateController.getDateHMS);
-router.get(`getTable/:num?`, tableController.getTable);
+router.get(`/getTable/:num?`, tableController.getTable);
 
 module.exports = router;
