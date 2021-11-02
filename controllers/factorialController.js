@@ -13,7 +13,7 @@ module.exports = {
             else {
                 return (num * factorialize(num - 1));
             }
-          }
-        factorialize(num)
+        }
+        res.status(status.OK).send(factorialize(num));
     }
 }
