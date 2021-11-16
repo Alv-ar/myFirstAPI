@@ -4,6 +4,7 @@ const users = [
     {id:3, name: 'maria'}
 ];
 
+const router = require("../routes/userRoutes");
 const status = require("../status/status")
 
 module.exports = {
@@ -24,5 +25,14 @@ module.exports = {
             const msg = {error: "User id not found"};
             res.status(status.NOT_FOUND).send(msg)
         }
+    },
+
+    create: (req, res) => {
+        const user = req.body;
+        user.id = users.length + 1;
+
+        users.push(user)
+        
+        res.status(status.created).send(user)
     }
 }
