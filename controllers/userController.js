@@ -4,7 +4,6 @@ const users = [
     {id:3, name: 'maria'}
 ];
 
-const router = require("../routes/userRoutes");
 const status = require("../status/status")
 
 module.exports = {
