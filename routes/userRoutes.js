@@ -23,4 +23,9 @@ router.post('/create',
     userController.create
 )
 
+router.get(`/details/:id`,
+    joiSchemaValidation.validate(userSchemas.userIdSchema, 'params'),
+    userController.selectById
+);
+
 module.exports = router;
